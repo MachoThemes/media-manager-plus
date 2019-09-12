@@ -10,6 +10,8 @@
  * License URI:            http://www.gnu.org/licenses/gpl-3.0.html
  * Requires PHP:            5.6
  * Tested up to:            5.2
+ * Text Domain:             uber-media
+ * Domain Path:             /lang
  *
  * Copyright 2013-2017        Dev7Studios        https://t.me/gilbitron
  * Copyright 2017-2019        CodeinWP            https://www.codeinwp.com/contact/
@@ -84,14 +86,20 @@ class uber_media {
 
         $this->include_sources();
 
-        load_plugin_textdomain($this->plugin_l10n, false, dirname(plugin_basename(__FILE__)) . '/lang/');
 
         require_once($this->plugin_path . 'includes/wp-settings-framework.php');
         $this->wpsf = new ubermediaWordPressSettingsFramework($this->plugin_path . 'includes/uber-media-settings.php', '');
         add_filter($this->wpsf->get_option_group() . '_settings_validate', array($this, 'validate_settings'));
         $this->settings = wpsf_get_settings($this->plugin_path . 'includes/uber-media-settings.php');
 
+        add_action('plugins_loaded',array($this,'load_textdomain'));
+
     }
+
+    public function load_textdomain(){
+        load_plugin_textdomain($this->plugin_l10n, false, basename( dirname( __FILE__ ) ) . '/lang/');
+    }
+
 
     function activate($network_wide) {
         set_transient('_mmp_activation_redirect', true, 30);
