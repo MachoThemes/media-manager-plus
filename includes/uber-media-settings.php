@@ -10,8 +10,8 @@ $wpsf_ubermedia_settings[] = array(
     'fields' => array(
         array(
             'id' => 'available',
-            'title' => __( '', $plugin_l10n ),
-            'desc' => __( '', $plugin_l10n ),
+            'title' => __( '', 'uber-media' ),
+            'desc' => __( '', 'uber-media' ),
             'type' => 'custom',
             'std' => ''
         ),
@@ -40,15 +40,15 @@ $wpsf_ubermedia_settings[] = array(
     'fields' => array(
         array(
             'id' => 'show-connected',
-            'title' => __( 'Show Connected Sources', $plugin_l10n ),
-            'desc' => __( 'Only show connected sources in side menu of the media popup', $plugin_l10n ),
+            'title' => __( 'Show Connected Sources', 'uber-media' ),
+            'desc' => __( 'Only show connected sources in side menu of the media popup', 'uber-media' ),
             'type' => 'checkbox',
             'std' => 0
         ),
         array(
             'id' => 'safe-mode',
-            'title' => __( 'Safe Mode', $plugin_l10n ),
-            'desc' => __( 'Safe mode filters sources for nude, explicit or NSFW media', $plugin_l10n ),
+            'title' => __( 'Safe Mode', 'uber-media' ),
+            'desc' => __( 'Safe mode filters sources for nude, explicit or NSFW media', 'uber-media' ),
             'type' => 'checkbox',
             'std' => 1
         ),
