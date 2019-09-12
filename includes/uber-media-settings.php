@@ -65,7 +65,6 @@ $wpsf_ubermedia_settings[] = array(
             'title' => 'Useful Links',
             'desc' => '',
             'type' => 'custom',
-            'std' => 'Website: <a href="http://dev7studios.com/media-manager-plus" target="_blank">Media Manager Plus</a><br />
             'std' => 'Website: <a href="https://www.machothemes.com/" target="_blank">Media Manager Plus</a><br />
             Created by: <a href="http://dev7studios.com" target="_blank">Dev7studios</a><br />Maintained & operated by: <a href="https://www.machothemes.com/" target="_blank">Machothemes</a><br />
             Support: <a href="https://wordpress.org/support/plugin/uber-media/" target="_blank">Support Forums</a><br />
