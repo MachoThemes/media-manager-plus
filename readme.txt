@@ -79,6 +79,12 @@ in the "General Settings" tab.
 
 == Changelog ==
 
+**1.4.4 (2019.09.12)**
+
+ * Update links
+ * Fix undefined notice
+ * Update texts
+
 **1.4.3 (2014.02.05)**
 
  * [Fixed] Flickr connection issue due to API HTTPS change
