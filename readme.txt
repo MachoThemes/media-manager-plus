@@ -84,6 +84,7 @@ in the "General Settings" tab.
  * Update links
  * Fix undefined notice
  * Update texts
+ * Translation ready
 
 **1.4.3 (2014.02.05)**
 
