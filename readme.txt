@@ -81,6 +81,7 @@ in the "General Settings" tab.
 
 **1.4.5 (2019.10.10)**
  * Disabled Extensions tab
+ * Fix translation strings
 
 **1.4.4 (2019.09.12)**
 
