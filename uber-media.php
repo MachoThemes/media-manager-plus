@@ -52,7 +52,8 @@ class uber_media {
     private $plugin_path;
     private $plugin_version;
     private $plugin_l10n;
-    private $extensions_url;
+    //@todo : delete below commented line
+    //private $extensions_url;
     private $callback;
 
     function __construct() {
@@ -61,7 +62,8 @@ class uber_media {
         $this->plugin_folder  = basename(plugin_dir_path(__FILE__));
         $this->plugin_path    = plugin_dir_path(__FILE__);
         $this->plugin_l10n    = 'uber-media';
-        $this->extensions_url = 'http://cdn.dev7studios.com/media-manager-plus/extensions.json?v=1.1';
+        //@todo : delete below commented line
+        //$this->extensions_url = 'http://cdn.dev7studios.com/media-manager-plus/extensions.json?v=1.1';
         $this->callback       = get_admin_url() . 'upload.php?page=uber-media';
 
         register_activation_hook(__FILE__, array($this, 'activate'));
@@ -169,10 +171,11 @@ class uber_media {
                 </a>
             </h2>
 
-            <div class="changelog">
-                <h3><?php _e('Introducing Extensions', 'uber-media'); ?></h3>
-                <?php $this->get_extensions(); ?>
-            </div>
+            <!-- @todo:delete below commented lines -->
+            <!--<div class="changelog">
+                <h3><?php /*_e('Introducing Extensions', 'uber-media'); */?></h3>
+                <?php /*$this->get_extensions(); */?>
+            </div>-->
             <div class="return-to-dashboard">
                 <a href="<?php echo esc_url(admin_url(add_query_arg(array('page' => 'uber-media'), 'upload.php'))); ?>"><?php _e('Go to Media Manager Plus Settings', 'uber-media'); ?></a>
             </div>
@@ -283,9 +286,11 @@ class uber_media {
 
             if ($section['id'] == 'sources') {
                 $this->setting_image_sources();
-            } else if ($section['id'] == 'extensions') {
+            }
+            // @todo: delete below commented lines
+            /*else if ($section['id'] == 'extensions') {
                 $this->setting_extensions();
-            } else {
+            }*/ else {
                 call_user_func($section['callback'], $section);
                 if (!isset($wp_settings_fields) || !isset($wp_settings_fields[$page]) || !isset($wp_settings_fields[$page][$section['id']]))
                     continue;
@@ -350,11 +355,14 @@ class uber_media {
         echo $html;
     }
 
-    function setting_extensions() {
+    // @todo : delete below commented lines
+    /*function setting_extensions() {
         $this->get_extensions();
-    }
+    }*/
 
-    function get_installed_extensions() {
+
+    // @todo: delete below commented lines
+    /*function get_installed_extensions() {
         $extensions = array();
         $plugins    = wp_get_active_and_valid_plugins();
         foreach ($plugins as $key => $plugin) {
@@ -363,9 +371,9 @@ class uber_media {
                 $extensions[] = basename($plugin, ".php");
         }
         return $extensions;
-    }
-
-    function get_extensions() {
+    }*/
+    //@todo : Delete below commented lines
+    /*function get_extensions() {
         $result     = wp_remote_get($this->extensions_url);
         $extensions = array();
         if (200 == $result['response']['code']) {
@@ -399,7 +407,7 @@ class uber_media {
         if ($html == '' || $count == 0)
             $html = __('No new extensions available, you must have installed them all. Nice.', 'uber-media');
         echo $html;
-    }
+    }*/
 
     function include_sources() {
         require_once(dirname(__FILE__) . '/includes/oauth/provider.php');
@@ -607,7 +615,8 @@ class uber_media {
         $strings['mmp_menu']        = apply_filters('mmp_default_menu', 'default');
         $strings['mmp_menu_prefix'] = apply_filters('mmp_menu_prefix', __('Insert from ', 'uber-media'));
         $strings['mmp_defaults']    = apply_filters('mmp_default_settings', array());
-        $strings['mmp_extensions']  = $this->get_installed_extensions();
+        // @todo : delete below commented lines
+        //$strings['mmp_extensions']  = $this->get_installed_extensions();
         return $strings;
     }
 

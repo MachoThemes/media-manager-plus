@@ -23,7 +23,8 @@
 	bottom: 10px;
     left: 10px;
 }
-
+/*@todo : delete below commented lines*/
+/*
 .wrap #uber-media-extensions ul {
 	margin: 0;
 }
@@ -67,6 +68,7 @@
 .changelog #uber-media-extensions {
 	float: left;
 }
+*/
 
 .mmp-welcome .return-to-dashboard {
 	clear: both;

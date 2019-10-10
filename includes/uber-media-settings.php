@@ -18,7 +18,8 @@ $wpsf_ubermedia_settings[] = array(
      )
 );
 
-$wpsf_ubermedia_settings[] = array(
+//@todo : delete below commented lines
+/*$wpsf_ubermedia_settings[] = array(
     'section_id' => 'extensions',
     'section_title' => 'Extensions',
     'section_order' => 2,
@@ -31,7 +32,7 @@ $wpsf_ubermedia_settings[] = array(
             'std' => ''
         )
     )
-);
+);*/
 
 $wpsf_ubermedia_settings[] = array(
     'section_id' => 'general',

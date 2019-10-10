@@ -70,9 +70,12 @@ jQuery(document).ready(function($){
 		originalTrigger.apply(this, Array.prototype.slice.call(arguments));
 	}
 	*/
-	
-	var extensions = wp.media.view.l10n.mmp_extensions;
-	var importer = ($.inArray('media-manager-plus-importer', extensions) > 0) ? true : false;
+
+	// @todo: delete below commented lines
+	//var extensions = wp.media.view.l10n.mmp_extensions;
+	//var importer = ($.inArray('media-manager-plus-importer', extensions) > 0) ? true : false;
+	//@todo: for the moment fix. Will delete commented lines and importer if no issues come
+	importer = false;
 	
 	var UberImage = Backbone.Model.extend({
 	});
