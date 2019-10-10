@@ -32,8 +32,8 @@ function flickr_mmp_settings($wpsf_ubermedia_settings) {
 	$fields = $wpsf_ubermedia_settings[2]['fields'];
 	$fields[] = 	array(
 					            'id' => 'flickr-license',
-					            'title' => __( 'Flickr License Options' ),
-					            'desc' => __( 'Select the license types of images returned from Flickr' ),
+					            'title' => __( 'Flickr License Options','uber-media' ),
+					            'desc' => __( 'Select the license types of images returned from Flickr','uber-media' ),
 					            'type' => 'checkboxes',
 					            'choices' => $choices,
 					            'std' => ''

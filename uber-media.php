@@ -677,18 +677,18 @@ class uber_media {
             <div class="setting align">
                 <span><?php _e('Align', 'uber-media'); ?></span>
                 <select class="alignment" data-setting="align" name="uber-align">
-                    <option value="left"> <?php esc_attr_e('Left'); ?> </option>
-                    <option value="center"> <?php esc_attr_e('Center'); ?> </option>
-                    <option value="right"> <?php esc_attr_e('Right'); ?> </option>
-                    <option selected="selected" value="none"> <?php esc_attr_e('None'); ?> </option>
+                    <option value="left"> <?php esc_attr_e('Left','uber-media'); ?> </option>
+                    <option value="center"> <?php esc_attr_e('Center','uber-media'); ?> </option>
+                    <option value="right"> <?php esc_attr_e('Right','uber-media'); ?> </option>
+                    <option selected="selected" value="none"> <?php esc_attr_e('None','uber-media'); ?> </option>
                 </select>
             </div>
             <div class="setting link-to">
                 <span><?php _e('Link To', 'uber-media'); ?></span>
                 <select class="link-to" data-setting="link-to" name="uber-link">
-                    <option value="{{ data.selected_image.dataset.full }}"> <?php esc_attr_e('Image URL'); ?> </option>
-                    <option value="{{ data.selected_image.dataset.link }}"> <?php esc_attr_e('Page URL'); ?> </option>
-                    <option selected="selected" value="none"> <?php esc_attr_e('None'); ?> </option>
+                    <option value="{{ data.selected_image.dataset.full }}"> <?php esc_attr_e('Image URL','uber-media'); ?> </option>
+                    <option value="{{ data.selected_image.dataset.link }}"> <?php esc_attr_e('Page URL','uber-media'); ?> </option>
+                    <option selected="selected" value="none"> <?php esc_attr_e('None','uber-media'); ?> </option>
                 </select>
             </div>
             <?php do_action('uber_media_settings_after'); ?>

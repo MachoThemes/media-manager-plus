@@ -35,8 +35,8 @@ function mmp_settings_500px($wpsf_ubermedia_settings) {
 	$fields = $wpsf_ubermedia_settings[2]['fields'];
 	$fields[] = 	array(
 					            'id' => '500px-license',
-					            'title' => __( '500px License Options' ),
-					            'desc' => __( 'Select the license type of images returned from 500px' ),
+					            'title' => __( '500px License Options','uber-media' ),
+					            'desc' => __( 'Select the license type of images returned from 500px','uber-media' ),
 					            'type' => 'select',
 					            'choices' => $choices,
 					            'std' => '-1'
