@@ -4,7 +4,7 @@ Tags: media, manager, image, images, 500px, Behance, DeviantArt, Dribbble, Dropb
 Requires at least: 4.6
 Tested up to: 5.2
 Requires PHP: 5.6
-Stable tag: 1.4.4
+Stable tag: 1.4.5
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -78,6 +78,9 @@ in the "General Settings" tab.
 4. General settings
 
 == Changelog ==
+
+**1.4.5 (2019.10.10)**
+ * Disabled Extensions tab
 
 **1.4.4 (2019.09.12)**
 

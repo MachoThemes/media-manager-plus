@@ -2,7 +2,7 @@
 /**
  * Plugin Name:                Media Manager Plus
  * Description:                Upgrade the WordPress Media Manager and add support for Flickr, Instagram, 500px etc.
- * Version:                    1.4.4
+ * Version:                    1.4.5
  * Author:                    MachoThemes
  * Author URI:                https://www.machothemes.com/
  * Requires:                4.6 or higher
@@ -58,7 +58,7 @@ class uber_media {
 
     function __construct() {
 
-        $this->plugin_version = '1.4.4';
+        $this->plugin_version = '1.4.5';
         $this->plugin_folder  = basename(plugin_dir_path(__FILE__));
         $this->plugin_path    = plugin_dir_path(__FILE__);
         $this->plugin_l10n    = 'uber-media';
