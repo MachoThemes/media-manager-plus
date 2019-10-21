@@ -285,7 +285,7 @@ if( !class_exists('ubermediaWordPressSettingsFramework') ){
                 <?php do_action('wpsf_before_settings_fields'); ?>
                 <?php settings_fields( $this->option_group ); ?>
         		<?php do_settings_sections( $this->option_group ); ?>
-        		<p class="submit"><input type="submit" class="button-primary" value="<?php _e( 'Save All Changes' ); ?>" /></p>
+        		<p class="submit"><input type="submit" class="button-primary" value="<?php _e( 'Save All Changes','uber-media' ); ?>" /></p>
 			</form>
     		<?php
     		do_action('wpsf_after_settings');

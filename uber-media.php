@@ -2,7 +2,7 @@
 /**
  * Plugin Name:                Media Manager Plus
  * Description:                Upgrade the WordPress Media Manager and add support for Flickr, Instagram, 500px etc.
- * Version:                    1.4.4
+ * Version:                    1.4.5
  * Author:                    MachoThemes
  * Author URI:                https://www.machothemes.com/
  * Requires:                4.6 or higher
@@ -52,16 +52,18 @@ class uber_media {
     private $plugin_path;
     private $plugin_version;
     private $plugin_l10n;
-    private $extensions_url;
+    //@todo : delete below commented line
+    //private $extensions_url;
     private $callback;
 
     function __construct() {
 
-        $this->plugin_version = '1.4.4';
+        $this->plugin_version = '1.4.5';
         $this->plugin_folder  = basename(plugin_dir_path(__FILE__));
         $this->plugin_path    = plugin_dir_path(__FILE__);
         $this->plugin_l10n    = 'uber-media';
-        $this->extensions_url = 'http://cdn.dev7studios.com/media-manager-plus/extensions.json?v=1.1';
+        //@todo : delete below commented line
+        //$this->extensions_url = 'http://cdn.dev7studios.com/media-manager-plus/extensions.json?v=1.1';
         $this->callback       = get_admin_url() . 'upload.php?page=uber-media';
 
         register_activation_hook(__FILE__, array($this, 'activate'));
@@ -169,10 +171,11 @@ class uber_media {
                 </a>
             </h2>
 
-            <div class="changelog">
-                <h3><?php _e('Introducing Extensions', 'uber-media'); ?></h3>
-                <?php $this->get_extensions(); ?>
-            </div>
+            <!-- @todo:delete below commented lines -->
+            <!--<div class="changelog">
+                <h3><?php /*_e('Introducing Extensions', 'uber-media'); */?></h3>
+                <?php /*$this->get_extensions(); */?>
+            </div>-->
             <div class="return-to-dashboard">
                 <a href="<?php echo esc_url(admin_url(add_query_arg(array('page' => 'uber-media'), 'upload.php'))); ?>"><?php _e('Go to Media Manager Plus Settings', 'uber-media'); ?></a>
             </div>
@@ -283,9 +286,11 @@ class uber_media {
 
             if ($section['id'] == 'sources') {
                 $this->setting_image_sources();
-            } else if ($section['id'] == 'extensions') {
+            }
+            // @todo: delete below commented lines
+            /*else if ($section['id'] == 'extensions') {
                 $this->setting_extensions();
-            } else {
+            }*/ else {
                 call_user_func($section['callback'], $section);
                 if (!isset($wp_settings_fields) || !isset($wp_settings_fields[$page]) || !isset($wp_settings_fields[$page][$section['id']]))
                     continue;
@@ -350,11 +355,14 @@ class uber_media {
         echo $html;
     }
 
-    function setting_extensions() {
+    // @todo : delete below commented lines
+    /*function setting_extensions() {
         $this->get_extensions();
-    }
+    }*/
 
-    function get_installed_extensions() {
+
+    // @todo: delete below commented lines
+    /*function get_installed_extensions() {
         $extensions = array();
         $plugins    = wp_get_active_and_valid_plugins();
         foreach ($plugins as $key => $plugin) {
@@ -363,9 +371,9 @@ class uber_media {
                 $extensions[] = basename($plugin, ".php");
         }
         return $extensions;
-    }
-
-    function get_extensions() {
+    }*/
+    //@todo : Delete below commented lines
+    /*function get_extensions() {
         $result     = wp_remote_get($this->extensions_url);
         $extensions = array();
         if (200 == $result['response']['code']) {
@@ -399,7 +407,7 @@ class uber_media {
         if ($html == '' || $count == 0)
             $html = __('No new extensions available, you must have installed them all. Nice.', 'uber-media');
         echo $html;
-    }
+    }*/
 
     function include_sources() {
         require_once(dirname(__FILE__) . '/includes/oauth/provider.php');
@@ -607,7 +615,8 @@ class uber_media {
         $strings['mmp_menu']        = apply_filters('mmp_default_menu', 'default');
         $strings['mmp_menu_prefix'] = apply_filters('mmp_menu_prefix', __('Insert from ', 'uber-media'));
         $strings['mmp_defaults']    = apply_filters('mmp_default_settings', array());
-        $strings['mmp_extensions']  = $this->get_installed_extensions();
+        // @todo : delete below commented lines
+        //$strings['mmp_extensions']  = $this->get_installed_extensions();
         return $strings;
     }
 
@@ -668,18 +677,18 @@ class uber_media {
             <div class="setting align">
                 <span><?php _e('Align', 'uber-media'); ?></span>
                 <select class="alignment" data-setting="align" name="uber-align">
-                    <option value="left"> <?php esc_attr_e('Left'); ?> </option>
-                    <option value="center"> <?php esc_attr_e('Center'); ?> </option>
-                    <option value="right"> <?php esc_attr_e('Right'); ?> </option>
-                    <option selected="selected" value="none"> <?php esc_attr_e('None'); ?> </option>
+                    <option value="left"> <?php esc_attr_e('Left','uber-media'); ?> </option>
+                    <option value="center"> <?php esc_attr_e('Center','uber-media'); ?> </option>
+                    <option value="right"> <?php esc_attr_e('Right','uber-media'); ?> </option>
+                    <option selected="selected" value="none"> <?php esc_attr_e('None','uber-media'); ?> </option>
                 </select>
             </div>
             <div class="setting link-to">
                 <span><?php _e('Link To', 'uber-media'); ?></span>
                 <select class="link-to" data-setting="link-to" name="uber-link">
-                    <option value="{{ data.selected_image.dataset.full }}"> <?php esc_attr_e('Image URL'); ?> </option>
-                    <option value="{{ data.selected_image.dataset.link }}"> <?php esc_attr_e('Page URL'); ?> </option>
-                    <option selected="selected" value="none"> <?php esc_attr_e('None'); ?> </option>
+                    <option value="{{ data.selected_image.dataset.full }}"> <?php esc_attr_e('Image URL','uber-media'); ?> </option>
+                    <option value="{{ data.selected_image.dataset.link }}"> <?php esc_attr_e('Page URL','uber-media'); ?> </option>
+                    <option selected="selected" value="none"> <?php esc_attr_e('None','uber-media'); ?> </option>
                 </select>
             </div>
             <?php do_action('uber_media_settings_after'); ?>
