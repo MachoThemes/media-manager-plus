@@ -234,7 +234,7 @@ class uber_media {
                                 <param name='movie' value='http://www.youtube.com/v/dR0sPNSICfk?fs=1'></param>
                                 <param name='allowFullScreen' value='true'></param>
                                 <param name='allowscriptaccess' value='never'></param>
-                                <embed src='http://www.youtube.com/v/dR0sPNSICfk?fs=1'
+                                <embed src='//www.youtube.com/v/dR0sPNSICfk?fs=1'
                                        type='application/x-shockwave-flash' allowscriptaccess='never'
                                        allowfullscreen='true' width='532' height='325'></embed>
                             </object>
