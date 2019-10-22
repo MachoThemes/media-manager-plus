@@ -19,17 +19,9 @@ Media Manager Plus Features:
 Currently supported services:
 
 * 500px
-* Behance (Premium)
-* DeviantArt (Premium)
 * Dribbble
-* Dropbox (Premium)
-* EyeEm (Premium)
-* Facebook (Premium)
 * Flickr
-* Forrst (Premium)
 * Instagram
-* Picasa (Premium)
-* Twitter (Premium)
 
 ## Installation ##
 
